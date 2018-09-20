@@ -1,11 +1,8 @@
 window.onload = function() {
-    // goThere();
+    setChildHeight("gray", "welcome-section");
     blinkOut();
     let currentPosition = document.body.scrollTop;
-    // console.log(window.pageYOffset);
-    // console.log(window.innerHeight);
-    // this.console.log(document.body.scrollHeight);
-
+    
     window.addEventListener("scroll", function() {
         if (window.pageYOffset > currentPosition && window.pageYOffset > 100) {
             navHide();
@@ -17,6 +14,17 @@ window.onload = function() {
         }
         currentPosition = window.pageYOffset;
     });
+}
+
+function setChildHeight(child, parent = "body") {
+    if (parent == "body") {
+        let parentDiv = window.innerHeight;
+    } else {
+        parentDiv = document.getElementById(parent).offsetHeight;
+    }
+    let childDiv = document.getElementById(child).offsetHeight;
+    let childPadding = ((parentDiv - childDiv) / 2) + "px";
+    document.getElementById(parent).style.paddingTop = childPadding;
 }
 
 function navHide() {
