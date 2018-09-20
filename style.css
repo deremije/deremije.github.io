@@ -80,7 +80,7 @@ header {
   background-image: url("https://media.giphy.com/media/3o6ZsX2OZJ8G3Tec6Y/giphy.gif");
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 100%;
+  background-size: cover;
   height: 100vh;
   color: var(--lightcontrast);
 }
@@ -96,10 +96,14 @@ header {
 h1 {
   font-size: 3rem;
   padding-bottom: 2rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
   font-weight: 600;
 }
 p {
   font-weight: 300;
+  padding-left: 2rem;
+  padding-right: 2rem;
 }
 #scroll {
   position: relative;
@@ -254,6 +258,10 @@ footer a:hover {
   .social {
     margin-bottom: 1em;
   }
+  #welcome-section {
+    background-color: var(--light);
+  background-image: none
+  }
 }
 @media only screen and (max-width: 708px) {
   #projects {
@@ -266,5 +274,11 @@ footer a:hover {
     width: 80%;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr;
+  }
+}
+@media only screen and (max-width: 425px) {
+  nav,
+  #scroll {
+    display: none;
   }
 }
